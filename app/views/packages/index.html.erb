@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Iternary</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @packages.each do |package| %>
+      <tr>
+        <td><%= package.name %></td>
+        <td><%= package.time %></td>
+        <td><%= package.iternary %></td>
+        <td><%= package.price %></td>
+        <td><%= link_to 'Show', package %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+ <%= link_to 'New Package', new_package_path %> 
