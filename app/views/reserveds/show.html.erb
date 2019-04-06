@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reserved.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @reserved.email %>
+</p>
+
+<p>
+  <strong>Pax:</strong>
+  <%= @reserved.pax %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @reserved.address %>
+</p>
+
+<p>
+  <strong>Ktp:</strong>
+  <%= @reserved.KTP %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @reserved.title %>
+</p>
+
+<%= link_to 'Edit', edit_reserved_path(@reserved) %> |
+<%= link_to 'Back', reserveds_path %>

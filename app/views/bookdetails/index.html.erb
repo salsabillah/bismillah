@@ -1,31 +1,34 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("img_parallax.jpg");
 
-<h1>Bookdetails</h1>
+  /* Set a specific height */
+  min-height: 500px; 
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Amount</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
 
-  <tbody>
-    <% @bookdetails.each do |bookdetail| %>
-      <tr>
-        <td><%= bookdetail.name %></td>
-        <td><%= bookdetail.email %></td>
-        <td><%= bookdetail.amount %></td>
-        <td><%= link_to 'Show', bookdetail %></td>
-        <td><%= link_to 'Edit', edit_bookdetail_path(bookdetail) %></td>
-        <td><%= link_to 'Destroy', bookdetail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
 
-<br>
+<div class="parallax"></div>
 
-<%= link_to 'New Bookdetail', new_bookdetail_path %>
+<div style="height:1000px;background-color:red;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+</body>
+</html>

@@ -1,37 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.parallax {
+  /* The image used */
+  background-image: url("img_parallax.jpg");
 
-<h1>Users</h1>
+  /* Set a specific height */
+  min-height: 500px; 
 
-<table>
-  <thead>
-    <tr>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+</head>
+<body>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="box-search">
+      <div class="thumbnail">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Granola03242006.JPG/280px-Granola03242006.JPG" alt="">
+          <div class="caption">
+              <p>contacto@windberg.cl</p>
+              <p>+56983874071   |   +56228231294</p>
+              <p>El Aguilucho 3174, Providencia, Región Metropolitana</p>
+          </div>
+      </div>
+  </div>
 
-<%= link_to 'New User', new_user_path %>
-
-<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
-<% end %>
-
-
-<% if @users.present? %>
-  <%=  @users.inspect %>
-<% else %>
-  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
-<% end %>
+</body>
+</html>

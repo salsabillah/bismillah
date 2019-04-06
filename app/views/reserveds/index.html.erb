@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reserveds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Pax</th>
+      <th>Address</th>
+      <th>Ktp</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reserveds.each do |reserved| %>
+      <tr>
+        <td><%= reserved.name %></td>
+        <td><%= reserved.email %></td>
+        <td><%= reserved.pax %></td>
+        <td><%= reserved.address %></td>
+        <td><%= reserved.KTP %></td>
+        <td><%= reserved.title %></td>
+        <td><%= link_to 'Show', reserved %></td>
+        <td><%= link_to 'Edit', edit_reserved_path(reserved) %></td>
+        <td><%= link_to 'Destroy', reserved, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reserved', new_reserved_path %>

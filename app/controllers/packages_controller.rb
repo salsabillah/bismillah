@@ -4,15 +4,10 @@ class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
   def index
-    @packages = Package.all
-  end
-
-  def search
-    @packages = Package.all
     if params[:search]
       @packages = Package.search(params[:search]).order("created_at DESC")
     else
-      @packages = Package.all.order('created_at DESC')
+      @packages= Package.all.order('created_at DESC')
     end
   end
 
