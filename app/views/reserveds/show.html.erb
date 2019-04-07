@@ -36,5 +36,9 @@
   <%#= @reserved.title %>
 </p>
 
-<p class="w3-center"> Whoopps i want to change my reserve! | <%= link_to 'Edit', edit_reserved_path(@reserved) %> </p>
+<p class="w3-center"> Whoopps i want to change my reserve! | </p>
 
+<div class="w3-content w3-container w3-center" id="about">
+<button class="w3-button w3-black w3-round-large"><a> <%= link_to 'Edit', edit_reserved_path(@reserved) %> </a></button>
+<button class="w3-button w3-black w3-round-large"><a href="/tentang-kami">Back</a></button>
+</div>

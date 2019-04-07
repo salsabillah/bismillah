@@ -1,9 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @contact.Contact %>
-</p>
 
-<%= link_to 'Edit', edit_contact_path(@contact) %> |
-<%= link_to 'Back', contacts_path %>
+<%#= link_to 'Edit', edit_contact_path(@contact) %> 
+
+<body>
+
+<div class="w3-display-top w3-center" style="white-space:nowrap; margin-top:75px">
+    <span class="w3-center w3-padding-large w3-xlarge w3-black w3-wide w3-animate-opacity">PULANG <span class="w3-hide-small">PERGI</span> .COM</span>
+  </div>
+<br>
+<br>
+
+<div class="w3-display-top w3-center" style="font-size:30px"></div>
+<div class="w3-content w3-container" id="about"> 
+<p class="w3-center" style="font-size:24px"><em>Your Great Journey, Strat from Us</em></p>
+<p class="w3-center" style="font-size:16px "> Hai,this email <strong>  <%= @contact.Contact %> </strong> will receive our message as soon as possible :) <p>
+<p class="w3-center" style="font-size:16px ">Thankyou, for subscribe Pulang Pergi.  Please keep in touch with us and wait our monthly magsz to explore your package tour<p>
+</div>
+<br>
+<br>
+
+<div class="w3-content w3-container w3-center" id="about">
+<button class="w3-button w3-black w3-round-large w3-center"><a href="/tentang-kami">Back Home</a></button>
+</div>
+</body>

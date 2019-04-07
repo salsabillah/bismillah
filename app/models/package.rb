@@ -5,5 +5,4 @@ class Package < ApplicationRecord
 end
 
 
-
    

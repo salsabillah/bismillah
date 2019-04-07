@@ -10,7 +10,6 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
-  color: #777;
   line-height: 1.8;
 }
 
@@ -24,7 +23,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('SouthKorea.jpg');
+  background-image: url("/assets/SouthKorea.jpg");
   min-height: 100%;
 }
 
@@ -49,8 +48,7 @@ body, html {
       <i class="fa fa-bars"></i>
     <a href="/tentang-kami" class="w3-bar-item w3-button">HOME</a>
     <a href="/tour-package" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TOUR PACKAGE</a>
-    <a href="/contact-us" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="/" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+    <a href="/contacts/new" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
   </div>
 
 
@@ -58,7 +56,7 @@ body, html {
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"style= "background-color: RGB(0,179,148)">
     <a href="/tentang-kami" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
     <a href="/tour-package" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR PACKAGE</a>
-    <a href="/contact-us" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="/contacts/new" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
 
@@ -70,13 +68,12 @@ body, html {
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
+<div class="w3-content w3-container" id="about">
   <h3 class="w3-center">CONTACT</h3>
   <p class="w3-center"><em>Your Great Journey, Strat from Us</em></p>
   <p>Want to know more about our tour, packages, journey and many more. stay keep in touch with us. leave your email to get our monthly magazine!</p>
-   <br>
-   <%= render 'form', contact: @contact %>
-  
+</div>
+  <%= render 'form', contact: @contact %>
   <%#= link_to 'Show', contact %>
   <%#= link_to 'Edit', edit_contact_path(contact) %>
   <%#= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -89,7 +86,6 @@ body, html {
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-
 <footer class="w3-center w3-padding-64 w3-black w3-hover-opacity-off"style= "background-color: RGB(0,179,148); color:white">
   </div>
   </footer>
