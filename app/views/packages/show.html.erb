@@ -1,29 +1,252 @@
 <p id="notice"><%= notice %></p>
+<head>
+<style>
 
-<p>
-  <strong>Name:</strong>
-  <%= @package.name %>
-</p>
+* {
+  box-sizing: border-box;
+}
 
-<p>
-  <strong>Time:</strong>
-  <%= @package.time %>
-</p>
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
 
-<p>
-  <strong>Iternary:</strong>
-  <%= @package.iternary %>
-</p>
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
 
-<p>
-  <strong>Price:</strong>
-  <%= @package.price %>
-</p>
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
 
-<%= link_to 'Edit', edit_package_path(@package) %>
-<%= link_to 'show', package_path(@package) %>  |
-<%= link_to 'Back', packages_path %>
-<th><a href="/bookdetails">Booked Now!</a></th>
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
 
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+.newspaper {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+  -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 40px; /* Firefox */
+  column-gap: 40px;
+  -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+  -moz-column-rule-style: solid; /* Firefox */
+  column-rule-style: solid;
+}
+
+</style>
+</head>
+<body>
+
+<div class="w3-display-top w3-center" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity" style= "margin-top:50px">  <%= @package.name %> </span>
+  </div>
+  <br>
+  <br>
+<!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="8_Hong-Kong.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="hong-kong-city-hd-wallpaper.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="Istanbul_Hagia_Sophia_Mosque_Wonderful_Architecture_Turkey_Hd_Desktop_Wallpaper_citiesoflove.blogspot.com.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="liveaboard-raja-ampat-fam-islands-xxl.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="Singapore2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="TES.jpg" style="width:100%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="8_Hong-Kong.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+    </div>
+    <div class="column"> 
+      <img class="demo cursor" src="hong-kong-city-hd-wallpaper.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Istanbul_Hagia_Sophia_Mosque_Wonderful_Architecture_Turkey_Hd_Desktop_Wallpaper_citiesoflove.blogspot.com.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="liveaboard-raja-ampat-fam-islands-xxl.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="Singapore2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+    </div> 
+    <div class="column">
+      <img class="demo cursor" src="TES.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+    </div>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container" id="about">
+  <h3 class="w3-center"><%= @package.iternary %></h3>
+  <p class="w3-center" ><em>Your Great Journey, Strat from Us</em></p>
+  <p style="text-align:center" >We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+<h3 class="w3-center"><strong>Rp.<%= @package.price %></strong></h3>
+<div class="w3-content w3-container" id="about">
+ <h3 class="w3-center">Packages Include</h3>
+ <div class="newspaper">
+Round-trip airfare from New York (JFK) on Air India including fuel surcharges and taxes and fees | Intra-India ground transportation | 6 nights at superior first class & deluxe hotels with private bath | 9 meals: 6 buffet breakfasts, 2 lunches & a farewell dinner |
+Participate in Holi festival in Jaipur | Comprehensive guided touring program including all entrance fees to places visited | Experienced English-speaking tour director |
+    </div>
+<p class="w3-center"><strong>Notes : </strong>exclude above things are lean by you :)</p>
+<br>
+  <h3 class="w3-center">Only Available on,<strong> <%= @package.time %></strong></h3>
+</body>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<br>
+<br>
+<%#= link_to 'Edit', edit_package_path(@package) %>
+<%#= link_to 'show', package_path(@package) %>  
+<div class="w3-content w3-container w3-center" id="about">
+<button class="w3-button w3-black w3-round-large"><a href="/tour-package">Back</a></button>
+<button class="w3-button w3-black w3-round-large"><a href="/reserveds/new">Reserve Now!</a></button>
+</div>
+<th>
+<br>
+<!-- Footer -->
+<!-- Footer -->
+<footer class="w3-center w3-padding-64 w3-black  w3-hover-opacity-off"style= "background-color: RGB(0,179,148); color:white">
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  </footer>
 
 

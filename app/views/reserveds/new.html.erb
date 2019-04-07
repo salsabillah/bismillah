@@ -1,20 +1,63 @@
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style>
-h1 {
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+h1 {color:black;
 text-align: center;
-font-size: 45px;
+font-size: 36px;
 font: bold;
-padding: 25px;
+padding: 5px;
+margin-right:20px;
 }
 
-body {
-background-image: url('Buttons.png');
-}
+.pict{ background-image: url('Turkey.jpg') }
+
 </style>
 </head>
+<br>
+<br>
 
-<h1>New Reserved!</h1>
 <body>
+<div class="pict">
+<h1>New Reserved!</h1>
+<!-- Navbar (sit on top) -->
+<div class="w3-top"style="background-color:white">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/tentang-kami" class="w3-bar-item w3-button">HOME</a>
+    <a href="/tour-package" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TOUR PACKAGE</a>
+    <a href="/contact-us" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"style= "background-color: RGB(0,179,148)">
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="/tour-package" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR PACKAGE</a>
+    <a href="/contact-us" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+  </div>
+</div>
+
 <%= render 'form', reserved: @reserved %>
 </body>
+
 <%#= link_to 'Back', reserveds_path %>
+<!-- Footer -->

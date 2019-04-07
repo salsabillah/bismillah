@@ -1,5 +1,95 @@
-<h1>New Contact</h1>
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
 
-<%= render 'form', contact: @contact %>
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-<%= link_to 'Back', contacts_path %>
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('SouthKorea.jpg');
+  min-height: 100%;
+}
+
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+  
+}
+</style>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-white ">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    <a href="/tentang-kami" class="w3-bar-item w3-button">HOME</a>
+    <a href="/tour-package" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TOUR PACKAGE</a>
+    <a href="/contact-us" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+  </div>
+
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"style= "background-color: RGB(0,179,148)">
+    <a href="/tentang-kami" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+    <a href="/tour-package" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR PACKAGE</a>
+    <a href="/contact-us" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-xlarge w3-black w3-wide w3-animate-opacity" style= "background-color:  RGB(0,179,148)">PULANG <span class="w3-hide-small">PERGI</span> .COM</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center"><em>Your Great Journey, Strat from Us</em></p>
+  <p>Want to know more about our tour, packages, journey and many more. stay keep in touch with us. leave your email to get our monthly magazine!</p>
+   <br>
+   <%= render 'form', contact: @contact %>
+  
+  <%#= link_to 'Show', contact %>
+  <%#= link_to 'Edit', edit_contact_path(contact) %>
+  <%#= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+</body>
+
+<div class="w3-xlarge w3-center w3-section"> 
+    <i class="fa fa-facebook-official w3-hover-opacity w3-xlarge"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+
+<footer class="w3-center w3-padding-64 w3-black w3-hover-opacity-off"style= "background-color: RGB(0,179,148); color:white">
+  </div>
+  </footer>

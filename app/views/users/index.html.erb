@@ -1,35 +1,111 @@
-<!DOCTYPE html>
+<!DOCTYPE >
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.parallax {
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
   /* The image used */
-  background-image: url("img_parallax.jpg");
+  background-image: url("PictFirst.png");
 
-  /* Set a specific height */
-  min-height: 500px; 
+  min-height: 380px;
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
 }
 </style>
 </head>
 <body>
 
-<div id="box-search">
-      <div class="thumbnail">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Granola03242006.JPG/280px-Granola03242006.JPG" alt="">
-          <div class="caption">
-              <p>contacto@windberg.cl</p>
-              <p>+56983874071   |   +56228231294</p>
-              <p>El Aguilucho 3174, Providencia, Región Metropolitana</p>
-          </div>
-      </div>
-  </div>
+<h2>Form on Hero Image</h2>
+<div class="bg-img">
+  <form action="/reserve#new" class="container">
+    <h1>Login</h1>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+
+    <%= form.label :pax %>
+    <%= form.number_field :pax %>
+    <button type="submit" class="btn">Login</button>
+    <%= form.submit %> 
+    <% end %>
+  </form>
+</div>
 
 </body>
+<br>
+<br>
+<br>
+
+<footer class="w3-center w3-padding-64 w3-black w3-opacity w3-hover-opacity-off"style= "background-color: RGB(0,179,148); color:white">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+ </footer>
+
 </html>

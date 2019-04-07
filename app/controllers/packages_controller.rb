@@ -4,6 +4,7 @@ class PackagesController < ApplicationController
   # GET /packages
   # GET /packages.json
   def index
+    @packages = Package.all
     if params[:search]
       @packages = Package.search(params[:search]).order("created_at DESC")
     else
@@ -24,6 +25,7 @@ class PackagesController < ApplicationController
   # GET /packages/1/edit
   def edit
   end
+
 
   # POST /packages
   # POST /packages.json

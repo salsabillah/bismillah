@@ -1,34 +1,40 @@
 <p id="notice"><%= notice %></p>
+<head>
+</head>
 
-<p>
-  <strong>Name:</strong>
-  <%= @reserved.name %>
+<body>
+
+<div class="w3-display-top w3-center" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-xlarge w3-black w3-wide w3-animate-opacity" style= "margin-top:50px">PULANG <span class="w3-hide-small">PERGI</span> .COM</span>
+  </div>
+
+<div class="w3-display-top w3-center w3-padding-64" style="font-size:30px"> Hai,<strong> <%= @reserved.name %> </strong>! </div>
+<div class="w3-content w3-container" id="about"> 
+<p class="w3-center" style="font-size:24px"><em>Your Great Journey, Strat from Us</em></p>
+<p class="w3-center" style="font-size:16px ">Thankyou, for trusting Pulang Pergi. The number of ticket bookings is being processed, check your email, <strong> <%= @reserved.email %> </strong> to see your payment details. We and your ticket are waiting for your payment. Have a nice day<p>
+</div>
+  <%#= @reserved.name %>
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @reserved.email %>
+  <%#= @reserved.email %>
 </p>
 
 <p>
-  <strong>Pax:</strong>
-  <%= @reserved.pax %>
+  <%#= @reserved.pax %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @reserved.address %>
+  <%#= @reserved.address %>
 </p>
 
 <p>
-  <strong>Ktp:</strong>
-  <%= @reserved.KTP %>
+  <%#= @reserved.KTP %>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @reserved.title %>
+  <%#= @reserved.title %>
 </p>
 
-<%= link_to 'Edit', edit_reserved_path(@reserved) %> |
-<%= link_to 'Back', reserveds_path %>
+<p class="w3-center"> Whoopps i want to change my reserve! | <%= link_to 'Edit', edit_reserved_path(@reserved) %> </p>
+
